@@ -15,10 +15,9 @@ MSG_RETRANSMIT_COUNT    = 3
 MSG_RETRANSMIT_INTERVAL = 3
 
 class ForwardProcess(Process):
-    def __init__(self, db_host, db_port, db_name, db_user, db_pwd, msg_queue, health_check_sock):
+    def __init__(self, db_host, db_port, db_name, db_user, db_pwd, msg_queue):
         super(ForwardProcess, self).__init__()
         self.queue = msg_queue
-        self.sock = health_check_sock
         try:
             self.conn = psycopg2.connect(database=db_name, user=db_user, password=db_pwd, host=db_host, port=db_port)   
             self.db = self.conn.cursor(cursor_factory = psycopg2.extras.RealDictCursor)

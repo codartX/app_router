@@ -6,12 +6,12 @@ RUN apt-get update
 # install python and pip for python
 RUN apt-get install -y python-pip  
 
-RUN pip install kafka-python==1.0.2
+RUN pip install pyzmq-static
 
 RUN apt-get install -y python-psycopg2
 
-RUN mkdir -p /opt/app_route
+RUN mkdir -p /opt/app_router
 
-ADD . /opt/app_route
-WORKDIR /opt/app_route
+ADD *.so app_router /opt/app_router
+WORKDIR /opt/app_router
 
