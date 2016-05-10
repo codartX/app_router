@@ -1,0 +1,15 @@
+{
+    "kafka_cfg": {
+        "hosts": ["10.75.163.104:31000"]
+    },
+
+    "database_cfg": {
+        "host": "10.75.163.111",
+        "port": 31032,
+        "username": "cisco",
+        "password": "cisco123",
+        "db_name": "lora"
+    },
+
+    "process_num": 3
+}
